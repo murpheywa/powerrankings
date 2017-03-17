@@ -16,16 +16,28 @@
             "showLog": true
         },
         {
-            "name": "Remote",
+            "name": "khm01",
+            "type": "go",
+            "request": "launch",
+            "mode": "remote",
+            "remotePath": "/home/murpheywa/go/src/github.com/murpheywa/powerrankingsgo",
+            "port": 2345,
+            "host": "104.196.225.85",
+            "program": "${workspaceRoot}",
+            "env": {},
+            "args": ["must be set on remote dlv command"]
+        },
+        {
+            "name": "ub01",
             "type": "go",
             "request": "launch",
             "mode": "remote",
             "remotePath": "/media/sf_ub01/go/src/github.com/murpheywa/powerrankingsgo",
             "port": 2345,
-            "host": " 192.168.56.101",
+            "host": "192.168.56.101",
             "program": "${workspaceRoot}",
             "env": {},
-            "args": []
+            "args": ["must be set on remote dlv command"]
         }
     ]
 }

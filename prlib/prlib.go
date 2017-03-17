@@ -42,7 +42,7 @@ func init() {
 		home := os.Getenv("HOME")
 		ProjectDirectory = path.Join(home, ".config", "murpheywa", "powerrankings")
 	}
-	os.MkdirAll(ProjectDirectory, 0644)
+	os.MkdirAll(ProjectDirectory, 0755)
 }
 
 func S(val int) (s string) {
@@ -57,7 +57,7 @@ func I(text string) int {
 
 func mkdirParent(filePath string) {
 	dir := path.Dir(filePath)
-	os.MkdirAll(dir, 0644)
+	os.MkdirAll(dir, 0755)
 	return
 }
 
