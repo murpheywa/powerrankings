@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"runtime"
 	"strings"
 	"time"
 
@@ -35,8 +36,12 @@ func init() {
 	// }
 	// ProjectDirectory = usr.HomeDir
 	// ----------------------------------------
-	ProjectDirectory = os.Getenv("LOCALAPPDATA")
-	ProjectDirectory = path.Join(ProjectDirectory, "murpheywa", "powerrankings")
+	if runtime.GOOS == "windows" {
+		ProjectDirectory = os.Getenv("LOCALAPPDATA")
+	} else {
+		home := os.Getenv("HOME")
+		ProjectDirectory = path.Join(home, ".config", "murpheywa", "powerrankings")
+	}
 	os.MkdirAll(ProjectDirectory, 0644)
 }
 
